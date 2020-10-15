@@ -25,7 +25,7 @@ then
     cd ~
     # our kaianga-conf starts emacs --daemon as part of its config
     # Launch emacs, after all thats why where here right ;)
-    bash -i -c "emacsclient -c -a \"\""
+    bash -i -c "emacsclient -c"
 else
    echo Exiting Matapihi Start - Kaianga not installed or failed to run
 fi
