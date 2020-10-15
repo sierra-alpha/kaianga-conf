@@ -21,12 +21,11 @@ pip3 install -U -i https://test.pypi.org/simple kaianga
 
 if kaianga -c ~/kaianga-conf/kaianga.conf -i -l debug -u shaun;
 then
-    exec $SHELL
     echo Running Matapihi Start - launching emacs
     cd ~
     # our kaianga-conf starts emacs --daemon as part of its config
     # Launch emacs, after all thats why where here right ;)
-    emacsclient -c -a ""
+    bash -i -c "emacsclient -c -a \"\""
 else
    echo Exiting Matapihi Start - Kaianga not installed or failed to run
 fi
