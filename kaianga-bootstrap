@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash -i
 
 echo Running Matapihi Start - installing packages
 # update and install dependenices
