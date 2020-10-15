@@ -17,16 +17,15 @@ echo Running Matapihi Start - Pip install and run kaianga
 # Need to add python stuff to the path, and install kaianga,
 # Run Kaianga the multithreaded script runner to setup our env
 pip3 install -U -i https://test.pypi.org/simple kaianga
-if "$(python3 -m site --user-base)"/bin/kaianga \
-	-c ~/kaianga-conf/kaianga.conf \
-	-i -l debug -u shaun; then
+export PATH=\"$(python3 -m site --user-base)/bin\":$PATH
 
+if kaianga -c ~/kaianga-conf/kaianga.conf -i -l debug -u shaun;
+then
     echo Running Matapihi Start - launching emacs
     cd ~
     # our kaianga-conf starts emacs --daemon as part of its config
     # Launch emacs, after all thats why where here right ;)
     emacsclient -c -a ""
-
 else
    echo Exiting Matapihi Start - Kaianga not installed or failed to run
 fi
