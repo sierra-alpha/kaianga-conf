@@ -22,6 +22,7 @@ if "$(python3 -m site --user-base)"/bin/kaianga \
 	-i -l debug -u shaun; then
 
     echo Running Matapihi Start - launching emacs
+    cd ~
     # our kaianga-conf starts emacs --daemon as part of its config
     # Launch emacs, after all thats why where here right ;)
     emacsclient -c -a ""
