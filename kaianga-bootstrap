@@ -21,7 +21,7 @@ pip3 install -U -i https://test.pypi.org/simple kaianga
 
 if kaianga -c ~/kaianga-conf/kaianga.conf -i -l debug -u shaun;
 then
-    . bash -i
+    exec $SHELL
     echo Running Matapihi Start - launching emacs
     cd ~
     # our kaianga-conf starts emacs --daemon as part of its config
