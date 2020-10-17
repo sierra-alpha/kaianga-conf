@@ -30,5 +30,6 @@ then
     exec /bin/bash -i
 else
    echo Exiting Matapihi Start - Kaianga not installed or failed to run
+   exit 1
 fi
 
