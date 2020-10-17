@@ -27,7 +27,7 @@ then
     # Launch emacs, after all thats why where here right ;)
     . .bashrc
     (emacsclient -c &> /dev/null & disown)
-    $SHELL
+    exec /bin/bash -i
 else
    echo Exiting Matapihi Start - Kaianga not installed or failed to run
 fi
