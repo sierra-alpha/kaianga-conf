@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# ghak = git hub add key (public) 
+# ghak = git hub add key (public)
 # uses github api to add a public key to GH
 
 function welcome () {
@@ -9,7 +9,7 @@ function welcome () {
 }
 
 function help_me() {
-    echo -e "Usage: ghak <username> <key name> <public key file>\n" 
+    echo -e "Usage: ghak <username> <key name> <public key file>\n"
 }
 
 function github_add_key() {
@@ -26,12 +26,12 @@ function github_add_key() {
 	      help_me
 	      return
     fi
-    
+
     # https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/testing-your-ssh-connection
     # Docs say checking for your user name in the response to ssh -T git@github.com
     # is how to test for ssh key access to GH, so we do that and then upload or key
     # on failure
-    if ! ssh -T git@github.com | grep "$user";
+    if ! (ssh -T git@github.com | grep "$user")
     then
         curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/user/keys \
