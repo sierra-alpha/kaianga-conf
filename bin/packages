@@ -1,6 +1,20 @@
-#!/bin/bash 
-
-for package in "$@"
-do
-    sudo apt-get install -qq "$package"
-done
+alttab
+curl
+emacs
+git
+inotify-tools
+iproute2
+iputils-ping
+less
+man-db
+moreutils
+procps
+python3
+python3-pip
+stow
+sudo
+tigervnc-standalone-server
+vim
+wget
+xterm
+xwit
