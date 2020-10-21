@@ -26,8 +26,17 @@ function github_add_key() {
 	      help_me
 	      return
     fi
-
-    curl -u "$user" -H "Accept: application/vnd.github.v3+json" https://api.github.com/user/keys -d '{"title":"'"$title"'", "key":"'"$(cat "$pubkey")"'"}'
+    
+    # https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/testing-your-ssh-connection
+    # Docs say checking for your user name in the response to ssh -T git@github.com
+    # is how to test for ssh key access to GH, so we do that and then upload or key
+    # on failure
+    if ! ssh -T git@github.com | grep "$user";
+    then
+        curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/user/keys \
+            -d '{"title":"'"$title"'", "key":"'"$(cat "$pubkey")"'"}'
+    fi
 }
 
 github_add_key "$@"
