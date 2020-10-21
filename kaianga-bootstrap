@@ -27,7 +27,9 @@ then
     # Launch emacs, after all thats why where here right ;)
     . .bashrc
     (xterm -bg "$bg" -fg "$fg" -fa "$fa" -fs "$fs" -bc -maximize -e "bash -i" & disown)
-    echo Warning, Closing emacs will end the session
+    echo WARNING - Closing emacs will end the session
+    echo Enter any key to start emacs
+    read
     emacsclient
 else
    echo Exiting Matapihi Start - Kaianga not installed or failed to run
