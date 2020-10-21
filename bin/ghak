@@ -31,8 +31,16 @@ function github_add_key() {
     # Docs say checking for your user name in the response to ssh -T git@github.com
     # is how to test for ssh key access to GH, so we do that and then upload or key
     # on failure. Note - the ssh connection always fails, so we need to redirect stderr
-    if ! ssh -T git@github.com 2>&1 | grep "$user"
+    while ! ssh -T git@github.com 2>&1 | grep "$user"
     then
+        echo Trying to set up your ssh key to Git Hub,
+        echo requires a Personal access token.
+        echo Enter q to quit or any other key to continue.
+        read prompt
+        if [[ "$prompt" == "q" ]]
+        then
+            break
+        fi
         curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/user/keys \
             -d '{"title":"'"$title"'", "key":"'"$(cat "$pubkey")"'"}'
