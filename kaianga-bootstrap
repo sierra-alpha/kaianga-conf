@@ -29,7 +29,7 @@ then
     (xterm -maximize -e "bash -i" & disown)
     echo Warning, this is the script that is keeping the session alive,
     echo closing it will forcefully destroy the session,
-    echo exit emacs with a \`ctrl-x ctrl-c\` or a \`ESC :q ENTER\` instead	
+    echo exit emacs with a \`ctrl-x ctrl-c\` or a \`ESC :q ENTER\` instead
     emacsclient -c
 else
    echo Exiting Matapihi Start - Kaianga not installed or failed to run
