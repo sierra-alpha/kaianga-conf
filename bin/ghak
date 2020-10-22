@@ -1,0 +1,50 @@
+#!/bin/bash
+
+# ghak = git hub add key (public)
+# uses github api to add a public key to GH
+
+function welcome () {
+    echo "Welcome to the GitHub public key adder"
+    echo -e "This will add a new public key to GH for you"
+}
+
+function help_me() {
+    echo -e "Usage: ghak <username> <key name> <public key file>\n"
+}
+
+function github_add_key() {
+    local user dirty pubkey OPTIND=1
+
+    arg_len=$#
+
+    user=$1
+    title=$2
+    pubkey=$3
+
+    if [[ $arg_len -lt 3 ]]; then
+	      echo "Not enough arguments passed"
+	      help_me
+	      return
+    fi
+
+    # https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/testing-your-ssh-connection
+    # Docs say checking for your user name in the response to ssh -T git@github.com
+    # is how to test for ssh key access to GH, so we do that and then upload or key
+    # on failure. Note - the ssh connection always fails, so we need to redirect stderr
+    while ! ssh -T git@github.com 2>&1 | grep "$user"
+    do
+        echo Trying to set up your ssh key to Git Hub,
+        echo requires a Personal access token.
+        echo Enter q to quit or any other key to continue.
+        read prompt
+        if [[ "$prompt" == "q" ]]
+        then
+            break
+        fi
+        curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/user/keys \
+            -d '{"title":"'"$title"'", "key":"'"$(cat "$pubkey")"'"}'
+    done
+}
+
+github_add_key "$@"

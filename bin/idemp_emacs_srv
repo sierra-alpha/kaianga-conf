@@ -1,0 +1,8 @@
+#! /bin/bash
+
+# idempotently launch emacs server
+# Check if we can access the server, return false otherwise
+if ! emacsclient -a false -e 't'
+then
+    emacs --daemon "$@"
+fi

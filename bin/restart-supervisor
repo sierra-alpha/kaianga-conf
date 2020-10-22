@@ -1,0 +1,6 @@
+#!/bin/bash
+
+(supervisorctl "$@" shutdown 2>&1 >/dev/null \
+    && echo Shutdown supervisor) \
+        || true
+supervisord "$@" && echo Restarted supervisor

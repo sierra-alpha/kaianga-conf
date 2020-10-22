@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Must be ran interactivley
+
+sudo apt-get -qq update
+sudo apt-get -qq upgrade
+sudo apt-get -qq autoclean
