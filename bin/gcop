@@ -28,7 +28,7 @@ function git_clone_or_pull() {
     fi
 
     echo trying git clone, falling back to pull
-    git clone "$remote" "$target" 2>&1 > /dev/null \
+    git clone --quiet "$remote" "$target" 2>&1 > /dev/null \
         || (echo clone failed, trying pull \
                 && cd "$target" && git pull)
     cd "$dirbak"
