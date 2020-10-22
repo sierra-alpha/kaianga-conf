@@ -13,7 +13,6 @@ git clone https://github.com/sierra-alpha/kainga-conf.git 2>/dev/null \
     || cd kainga-conf && git pull && cd "$dir_bak"
 
 echo Running Matapihi Start - Pip install and run wakahiki
-# (change to real pypi eventually)
 # Need to add python stuff to the path, and install wakahiki,
 # Run wakahiki the multithreaded script runner to setup our env
 export PATH="$(python3 -m site --user-base)"/bin:$PATH
