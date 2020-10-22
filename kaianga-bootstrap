@@ -6,24 +6,24 @@ sudo apt-get update && sudo apt-get upgrade \
     && sudo apt-get install -y python3 python3-pip git
 
 
-echo Running Matapihi Start - Cloning kaianga
+echo Running Matapihi Start - Cloning kainga
 # try a clone if it doesn't exist, if it does go and pull that repo
 dir_bak=$(pwd)
-git clone https://github.com/sierra-alpha/kaianga-conf.git 2>/dev/null \
-    || cd kaianga-conf && git pull && cd "$dir_bak"
+git clone https://github.com/sierra-alpha/kainga-conf.git 2>/dev/null \
+    || cd kainga-conf && git pull && cd "$dir_bak"
 
 echo Running Matapihi Start - Pip install and run wakahiki
 # (change to real pypi eventually)
-# Need to add python stuff to the path, and install kaianga,
-# Run Kaianga the multithreaded script runner to setup our env
+# Need to add python stuff to the path, and install wakahiki,
+# Run wakahiki the multithreaded script runner to setup our env
 export PATH="$(python3 -m site --user-base)"/bin:$PATH
 pip3 install -U wakahiki
 
-if wakahiki -c ~/kaianga-conf/kaianga.conf -l debug -o ~/.wakahiki.log -u shaun;
+if wakahiki -c ~/kainga-conf/kainga.conf -l debug -o ~/.wakahiki.log -u shaun;
 then
     echo Running Matapihi Start - launching emacs
     cd ~
-    # our kaianga-conf starts emacs --daemon as part of its config
+    # our kainga-conf starts emacs --daemon as part of its config
     # Launch emacs, after all thats why where here right ;)
     . .bashrc
     (xterm -maximize -e "bash -i" & disown)
@@ -32,7 +32,7 @@ then
     echo exit emacs with a \`ctrl-x ctrl-c\` or a \`ESC :q ENTER\` instead
     emacsclient -c
 else
-   echo Exiting Matapihi Start - Kaianga not installed or failed to run
+   echo Exiting Matapihi Start - Kainga not installed or failed to run
    exit 1
 fi
 
