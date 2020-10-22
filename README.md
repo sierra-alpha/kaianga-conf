@@ -21,7 +21,7 @@ Or the following
 sudo apt-get update && sudo apt-get install -y python3 python3-pip git \
 && git clone https://github.com/sierra-alpha/kaianga-conf.git \
 && export PATH="$(python3 -m site --user-base)/bin:$PATH" \
-&& pip3 install -U -i wakahiki \
+&& pip3 install -U wakahiki \
 && wakahiki -c ~/kaianga-conf/kaianga.conf -l debug -o ~/.wakahiki.log -u shaun
 ```
 
@@ -32,7 +32,7 @@ xterm -bg grey19 -fg grey70  -fa 'Source Code Pro' -fs 10 -maximize  -bc -e bash
 && git clone https://github.com/sierra-alpha/kaianga-conf.git \
 || cd kaianga-conf && git pull \
 && export PATH=\"$(python3 -m site --user-base)/bin:$PATH\" \
-&& pip3 install -U -i wakahiki \
+&& pip3 install -U wakahiki \
 && wakahiki -c ~/kaianga-conf/kaianga.conf -l debug -o ~/.wakahiki.log -u shaun \
 && emacsclient -c -a emacs \
 || echo Failure, enter to exit && read ; bash"
