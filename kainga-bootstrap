@@ -10,7 +10,10 @@ echo Running Matapihi Start - Cloning kainga
 # try a clone if it doesn't exist, if it does go and pull that repo
 dir_bak=$(pwd)
 git clone --recurse-submodules https://github.com/sierra-alpha/kainga-conf.git 2>/dev/null \
-    || cd kainga-conf && git pull && cd "$dir_bak"
+    || (cd kainga-conf && git pull --recurse-submodules \
+            && git submodule foreach --recursive git checkout master \
+            && git submodule foreach --recursive git pull origin master)
+        && cd "$dir_bak"
 
 echo Running Matapihi Start - Pip install and run wakahiki
 # (change to real pypi eventually)
