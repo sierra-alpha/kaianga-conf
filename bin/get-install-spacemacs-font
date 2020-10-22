@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! fc-list | grep -i "source code pro"
+if ! fc-list | grep -i "source code pro" >/dev/null
 then
 exec sudo /bin/bash - << EOF
 mkdir /usr/share/fonts/source
