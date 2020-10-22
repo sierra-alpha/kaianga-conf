@@ -13,7 +13,7 @@ sudo apt-get update && sudo apt-get install -y python3 python3-pip git \
 && git clone https://github.com/sierra-alpha/wakahiki.git \
 && cd wakahiki/ \
 && python setup.py develop \
-&& python src/wakahiki -c ~/kaianga-conf/kaianga.conf -i -l debug -u shaun
+&& python src/wakahiki -c ~/kaianga-conf/kaianga.conf -l debug -o ~/.wakahiki.log -u shaun
 ```
 
 Or the following
