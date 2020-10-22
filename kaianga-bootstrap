@@ -19,7 +19,7 @@ echo Running Matapihi Start - Pip install and run wakahiki
 export PATH="$(python3 -m site --user-base)"/bin:$PATH
 pip3 install -U -i wakahiki
 
-if kaianga -c ~/kaianga-conf/kaianga.conf -i -l debug -u shaun;
+if wakahiki -c ~/kaianga-conf/kaianga.conf -i -l debug -u shaun;
 then
     echo Running Matapihi Start - launching emacs
     cd ~
