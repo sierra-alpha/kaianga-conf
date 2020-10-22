@@ -33,7 +33,7 @@ xterm -bg grey19 -fg grey70  -fa 'Source Code Pro' -fs 10 -maximize  -bc -e bash
 || cd kaianga-conf && git pull \
 && export PATH=\"$(python3 -m site --user-base)/bin:$PATH\" \
 && pip3 install -U -i wakahiki \
-&& wakahiki -c ~/kaianga-conf/kaianga.conf -l debug -o .wakahiki.log -u shaun \
+&& wakahiki -c ~/kaianga-conf/kaianga.conf -l debug -o ~/.wakahiki.log -u shaun \
 && emacsclient -c -a emacs \
 || echo Failure, enter to exit && read ; bash"
 ```
