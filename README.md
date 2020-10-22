@@ -22,7 +22,7 @@ sudo apt-get update && sudo apt-get install -y python3 python3-pip git \
 && git clone https://github.com/sierra-alpha/kaianga-conf.git \
 && export PATH="$(python3 -m site --user-base)/bin:$PATH" \
 && pip3 install -U -i wakahiki \
-&& wakahiki -c ~/kaianga-conf/kaianga.conf -l debug -o .wakahik.log -u shaun
+&& wakahiki -c ~/kaianga-conf/kaianga.conf -l debug -o ~/.wakahik.log -u shaun
 ```
 
 or in an .xinitrc
