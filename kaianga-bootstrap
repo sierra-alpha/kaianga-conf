@@ -17,7 +17,7 @@ echo Running Matapihi Start - Pip install and run wakahiki
 # Need to add python stuff to the path, and install kaianga,
 # Run Kaianga the multithreaded script runner to setup our env
 export PATH="$(python3 -m site --user-base)"/bin:$PATH
-pip3 install -U -i wakahiki
+pip3 install -U wakahiki
 
 if wakahiki -c ~/kaianga-conf/kaianga.conf -l debug -o ~/.wakahiki.log -u shaun;
 then
