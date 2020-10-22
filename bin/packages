@@ -1,6 +1,0 @@
-#!/bin/bash 
-
-for package in "$@"
-do
-    sudo apt-get install -qq "$package"
-done

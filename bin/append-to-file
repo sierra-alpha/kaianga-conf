@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Append onto a file and merge if related entries. 
-touch ~/.temp
-git merge-file --union "$1" ~/.temp "$2"
-rm ~/.temp
