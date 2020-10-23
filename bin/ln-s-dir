@@ -13,6 +13,8 @@ if [[ $# -lt 2 ]]; then
 	  return
 fi
 
+orig_dir="$(pwd)"
+
 link="$1"
 dir="$(dirname $link)"
 file="$(basename $link)"
