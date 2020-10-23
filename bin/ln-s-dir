@@ -16,10 +16,11 @@ fi
 link="$1"
 dir="$(dirname $link)"
 file="$(basename $link)"
-
-target="$(readlink -f $2)"
+abs_link=
 
 mkdir -p "$dir"
+
+target="$(readlink -f $2)"
 
 ln -s "${@:3}" "$link" "$target" \
    || echo link failed, probably already exsists
