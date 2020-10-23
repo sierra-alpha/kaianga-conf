@@ -13,7 +13,7 @@ if [[ $# -lt 2 ]]; then
 	  return
 fi
 
-link=$(readlink -f "$1")
-target=$(readlink -f "$2")
+link="$(readlink -f $1)"
+target="$(readlink -f $2)"
 
 mkdir -p "$(dirname $link)"
