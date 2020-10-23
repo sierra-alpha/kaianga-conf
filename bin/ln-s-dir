@@ -16,7 +16,7 @@ fi
 link="$1"
 dir="$(dirname $link)"
 file="$(basename $link)"
-abs_link=
+abs_link="$dir/$file"
 
 mkdir -p "$dir"
 
