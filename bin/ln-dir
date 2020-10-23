@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# ln improved, resolves relative paths and makes
+# ln-dir, resolves relative paths and makes
 # link folder exist before hand
 
 function help_me() {
