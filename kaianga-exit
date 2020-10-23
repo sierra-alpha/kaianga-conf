@@ -1,4 +1,5 @@
 #! /bin/bash
 
-supervisorctl -c "~/.supervisord/supervisord.conf" stop all
+echo closing down supervisor
+supervisorctl -c "~/.supervisord/supervisord.conf" stop all &&
 supervisorctl -c "~/.supervisord/supervisord.conf" shutdown
