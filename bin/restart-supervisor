@@ -1,6 +1,8 @@
 #!/bin/bash
 
-(supervisorctl "$@" shutdown 2>&1 >/dev/null \
-    && echo Shutdown supervisor) \
-        || true
+
+supervisorctl "$@" stop all 2>&1 > /dev/null \
+    && echo Stopping any running services
+supervisorctl "$@" shutdown 2>&1 >/dev/null \
+    && echo Shutdown supervisor
 supervisord "$@" && echo Restarted supervisor
