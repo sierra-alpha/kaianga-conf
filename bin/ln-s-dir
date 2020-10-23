@@ -15,6 +15,7 @@ fi
 
 link="$1"
 dir="$(dirname $link)"
+file="$(basename $link)"
 
 target="$(readlink -f $2)"
 
