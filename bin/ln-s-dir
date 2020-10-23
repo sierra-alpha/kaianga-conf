@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# ln-dir, resolves relative paths and makes
+# ln -s dir, resolves relative paths and makes
 # link folder exist before hand
 
 function help_me() {
@@ -12,5 +12,7 @@ if [[ $# -lt 2 ]]; then
 	  help_me
 	  return
 fi
+
+
 
 mkdir -p "$1"
