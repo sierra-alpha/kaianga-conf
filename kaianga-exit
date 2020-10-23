@@ -1,8 +1,8 @@
 #! /bin/bash
 
-echo Shutting down supervisord
+echo "Shutting down supervisord"
 (supervisorctl -c ~/.supervisord/supervisord.conf stop all \
     && supervisorctl -c ~/.supervisord/supervisord.conf shutdown \
-    && echo Supervisord exited gracefully, exiting.) \
-    || (echo supervisord errored on exit, leaving anyway (press enter) \
+    && echo "Supervisord exited gracefully, exiting." ) \
+    || (echo "supervisord errored on exit, leaving anyway (press enter)" \
         && read)
