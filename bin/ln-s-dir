@@ -18,4 +18,4 @@ target="$(readlink -f $2)"
 
 mkdir -p "$(dirname $link)"
 
-ln -s "${@:3}" "$link" "$target"
+ln -s "${@:3}" "$target" "$link"
