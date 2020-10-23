@@ -17,3 +17,5 @@ link="$(readlink -f $1)"
 target="$(readlink -f $2)"
 
 mkdir -p "$(dirname $link)"
+
+ln -s "${@:3}" "$link" "$target"
