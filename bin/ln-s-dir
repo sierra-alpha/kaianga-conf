@@ -4,7 +4,7 @@
 # link folder exist before hand
 
 function help_me() {
-    echo -e "Usage: gcop <link-location> <target-location> <other ln args>\n"
+    echo -e "Usage: ln-s-dir <link-location> <target-location> <other ln args>\n"
 }
 
 if [[ $# -lt 2 ]]; then
@@ -13,6 +13,7 @@ if [[ $# -lt 2 ]]; then
 	  return
 fi
 
-
+link=$(readlink -f "$1")
+target=$(readlink -f "$2")
 
 mkdir -p "$1"
