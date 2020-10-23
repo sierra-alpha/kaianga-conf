@@ -18,5 +18,5 @@ target="$(readlink -f $2)"
 
 mkdir -p "$(dirname $link)"
 
-ln -s "${@:3}" "$target" "$link" \
+ln -s "${@:3}" "$link" "$target" \
    || echo link failed, probably already exsists
