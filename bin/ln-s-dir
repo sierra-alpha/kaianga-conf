@@ -24,5 +24,5 @@ mkdir -p "$dir"
 
 target="$(readlink -f $2)"
 
-ln -s "${@:3}" "$abs_link" "$target" \
+ln -s "${@:3}" "$target" "$abs_link" \
    || echo link failed, probably already exsists
