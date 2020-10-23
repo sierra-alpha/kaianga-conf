@@ -1,0 +1,9 @@
+#! /bin/bash
+
+# ln improved, resolves relative paths
+
+function help_me() {
+    echo -e "Usage: gcop <git repo> <local target>\n"
+}
+
+mkdir -p "$1"
