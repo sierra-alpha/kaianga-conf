@@ -1,8 +1,9 @@
 #! /bin/bash
 
+{
 echo Shutting down supervisord
 (supervisorctl -c ~/.supervisord/supervisord.conf stop all \
     && supervisorctl -c ~/.supervisord/supervisord.conf shutdown \
     && echo Supervisord exited gracefully, exiting.) \
-    || (echo supervisord errored on exit, leaving anyway (press enter) \
-        && read)
+    || echo supervisord errored on exit, leaving anyway
+} 2>&1 | tee >(ts '[%Y-%m-%d %H:%M:%S]' >> "$m_log")  
