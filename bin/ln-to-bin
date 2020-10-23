@@ -6,4 +6,9 @@ function help_me() {
     echo -e "Usage: gcop <link-location> <target-location> <other ln args>\n"
 }
 
+if [[ $# -lt 2 ]]; then
+	  echo "Not enough arguments passed"
+	  help_me
+	  return
+fi
 mkdir -p "$1"
