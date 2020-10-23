@@ -2,7 +2,7 @@
 
 
 supervisorctl "$@" stop all 2>&1 > /dev/null \
-    && echo Stopping any running services
+    && echo Stopping any running supervisord services
 supervisorctl "$@" shutdown 2>&1 >/dev/null \
-    && echo Shutdown supervisor
-supervisord "$@" && echo Restarted supervisor
+    && echo Shutdown supervisord
+supervisord "$@" && echo launched supervisord
