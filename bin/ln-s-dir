@@ -14,9 +14,11 @@ if [[ $# -lt 2 ]]; then
 fi
 
 link="$1"
+dir="$(dirname $link)"
+
 target="$(readlink -f $2)"
 
-mkdir -p "$(dirname $link)"
+mkdir -p "$dir"
 
 ln -s "${@:3}" "$link" "$target" \
    || echo link failed, probably already exsists
