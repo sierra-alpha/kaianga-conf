@@ -1,5 +1,6 @@
 #! /bin/bash
 
+<<<<<<< HEAD
 {
 echo Shutting down supervisord
 (supervisorctl -c ~/.supervisord/supervisord.conf stop all \
@@ -7,3 +8,11 @@ echo Shutting down supervisord
     && echo Supervisord exited gracefully, exiting.) \
     || echo supervisord errored on exit, leaving anyway
 } 2>&1 | tee >(ts '[%Y-%m-%d %H:%M:%S]' >> ~/.log/kaianga-exit.log)  
+=======
+echo "Shutting down supervisord"
+(supervisorctl -c ~/.supervisord/supervisord.conf stop all \
+    && supervisorctl -c ~/.supervisord/supervisord.conf shutdown \
+    && echo "Supervisord exited gracefully, exiting." ) \
+    || (echo "supervisord errored on exit, leaving anyway (press enter)" \
+        && read)
+>>>>>>> 2b915a8c9ee93185c836f983682677ec725cc58d
