@@ -16,4 +16,4 @@ fi
 link=$(readlink -f "$1")
 target=$(readlink -f "$2")
 
-mkdir -p "$1"
+mkdir -p "$(dirname $link)"
