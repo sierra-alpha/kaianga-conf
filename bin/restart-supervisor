@@ -1,8 +1,9 @@
 #!/bin/bash
 
-
-supervisorctl "$@" stop all 2>&1 > /dev/null \
-    && echo Stopping any running supervisord services
-supervisorctl "$@" shutdown 2>&1 >/dev/null \
-    && echo Shutdown supervisord
+(supervisorctl "$@" stop all 2>&1 > /dev/null \
+    && echo Stopping any running supervisord services) \
+    || echo No supervisord to check for running tasks
+(supervisorctl "$@" shutdown 2>&1 >/dev/null \
+    && echo Shutdown supervisord) \
+    || echo No supervisord to shutdown
 supervisord "$@" && echo launched supervisord
