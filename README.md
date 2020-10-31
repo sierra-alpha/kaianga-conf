@@ -16,7 +16,7 @@ Use the script found at
 to setup the system in it's current configuration, it's intended to be decoupled
 from the containerisation process of matapihi, so in theory you could run this
 on any debian based linux system (in time i'd like to ad support for CentOS and
-other flavours in time)
+other flavours), physical, virtualised or containerised.
 
 This is the configuration file to bootstrap a system the way I like it.
 Commands expect to be in a `bash` shell, default is `sh` enter bash then,
