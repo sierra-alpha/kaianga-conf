@@ -1,3 +1,10 @@
+# Kainga-conf
+
+## Description
+
+This package contains all the config and required scripts to get an environment
+set up how I like it
+O
 This is the configuration file to bootstrap a system the way I like it.
 Commands expect to be in a `bash` shell, default is `sh` enter bash then,
 Copy and paste the following into a containers shell. the &&'s allow for commands requiring input.
