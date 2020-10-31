@@ -3,7 +3,11 @@
 ## Description
 
 This package contains all the config and required scripts to get an environment
-set up how I like it
+set up how I like it, it is used in the parent package
+[kainga](https://github.com/sierra-alpha/kainga) to supply details to
+[matapihi](https://github.com/sierra-alpha/matapihi) and
+[wakahiki](https://github.com/sierra-alpha/wakahiki) in order to achieve the
+desired setup.
 O
 This is the configuration file to bootstrap a system the way I like it.
 Commands expect to be in a `bash` shell, default is `sh` enter bash then,
