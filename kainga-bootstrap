@@ -39,11 +39,12 @@ if wakahiki -c ~/kainga-conf/kainga.conf -l debug -o ~/.wakahiki.log -u $USER;
 then
     echo Running Matapihi Start - launching emacs
     cd ~
-    # our kainga-conf starts emacs --daemon as part of its config
-    # Launch emacs, after all thats why where here right ;)
+    # Source the .bashrc so that we get our env before launching emacs
     . .bashrc
     # launch and dison an xTerm so we have a CLI if required
     (xterm -maximize -e "bash -i" & disown)
+    # our kainga-conf starts emacs --daemon as part of its config
+    # Launch emacs, after all thats why where here right ;)
     echo Warning, this is the script that is keeping the session alive,
     echo closing it will forcefully destroy the session,
     echo exit emacs with a \`ctrl-x ctrl-c\` or a \`ESC :q ENTER\` instead
