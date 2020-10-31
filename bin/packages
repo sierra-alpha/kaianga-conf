@@ -17,6 +17,7 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+# Iterate throug a list of packages and install them all
 for package in "$@"
 do
     sudo apt-get install -qq "$package"
