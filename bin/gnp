@@ -94,11 +94,11 @@ function github_new_project() {
     git init
     if [ -s "$read_file" ]
     then
-	echo "Touching $read_file"
-	touch "$read_file"
+        echo "Touching $read_file"
+	      touch "$read_file"
     else
-	echo "creating $read_file"
-	echo "This is the initial $read_file" > "$read_file"
+	      echo "creating $read_file"
+	      echo "This is the initial $read_file" > "$read_file"
     fi
     echo "git add ."
     git add .
