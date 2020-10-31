@@ -19,6 +19,7 @@
 if ! fc-list | grep -i "source code pro" >/dev/null
 then
 
+# Following advice from font repo for install
 # Needs to be unindented for EOF of heredoc to work?
 exec sudo /bin/bash - << EOF
 mkdir /usr/share/fonts/source
