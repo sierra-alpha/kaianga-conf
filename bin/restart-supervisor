@@ -17,6 +17,8 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+# Check for any running supervisord tasks and shut them down safely
+# Then restart supervisord
 (supervisorctl "$@" stop all 2>&1 > /dev/null \
     && echo Stopping any running supervisord services) \
     || echo No supervisord to check for running tasks
