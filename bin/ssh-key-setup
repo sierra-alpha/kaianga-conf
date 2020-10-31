@@ -17,6 +17,7 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+# Sets up SSH key for GH useage
 # Needs global git config to be configured with email first
 if [ ! -f ~/.ssh/id_rsa ]; then
     ssh-keygen -t rsa -b 4096 -q -f "$HOME/.ssh/id_rsa" -C "$(git config user.email)"
