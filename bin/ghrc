@@ -89,7 +89,7 @@ function github_repo_create() {
     echo "Private token for GitHub user"
     read -s dirty
     curltext="curl -u '${user}':'${dirty}' https://api.github.com/user/repos -d '{\"name\":\"${reponame}\"${private}${description} }'"
-    echo -e "Curling now:\n"#$curltext # Uncomment this to see whats curling for debugging
+    # echo -e "Curling now:\n"#$curltext # Uncomment this to see whats curling for debugging
     eval $curltext
 }
 
