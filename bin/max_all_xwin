@@ -30,6 +30,7 @@ cur_res=($(xrandr 2>/dev/null | awk '/\*/ {gsub(/x/," ",$1); print $1; exit}'))
 cur_width_px=${cur_res[0]}
 cur_height_px=${cur_res[1]}
 
+# calculate the new resolution for each window
 calc_res () {
    perc=$1
    axis_px=$2
