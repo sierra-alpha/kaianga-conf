@@ -48,6 +48,8 @@ new_height_offset=$(calc_res $height_offset_pc $cur_height_px)
 # If they have no name they're probably invisible xwindows so we ignore them
 xwins="$(xwininfo -root -children -display $DISPLAY | awk '/^ *0x/ && !/has no name/ {print $1}')"
 
+# For each of the windows identified above we need to resize and
+# move them to the relevant offset
 for id in $xwins
 do
    xwit -id $id -resize $new_width_px $new_height_px
