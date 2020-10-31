@@ -18,5 +18,4 @@
 
 
 # Resize all windows to the specified resolution index in xrandr
-
 xrandr -s "$@" && max_all_xwin
