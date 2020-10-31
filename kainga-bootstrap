@@ -53,4 +53,3 @@ else
    echo Exiting Matapihi Start - Kainga not installed or failed to run
    exit 1
 fi
-
