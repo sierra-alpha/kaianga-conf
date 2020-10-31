@@ -23,7 +23,7 @@ sudo apt-get update && sudo apt-get upgrade \
 
 
 echo Running Matapihi Start - Cloning kainga
-# try a clone if it doesn't exist, if it does go and pull that repo
+# try a clone if it doesn't exist, if it does cd to and pull that repo
 dir_bak=$(pwd)
 git clone https://github.com/sierra-alpha/kainga-conf.git 2>/dev/null \
     || cd kainga-conf && git pull && cd "$dir_bak"
