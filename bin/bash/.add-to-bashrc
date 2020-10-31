@@ -15,7 +15,8 @@
 #     You should have received a copy of the GNU General Public License
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# These additions are made at runtime
+# These additions are made at runtime added to the .bashrc if they don't
+# exist to allow my custom bash things to be sources
 
 if [ -f ~/.my_bashrc ]; then
     . ~/.my_bashrc
