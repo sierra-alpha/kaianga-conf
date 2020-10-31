@@ -8,7 +8,9 @@ set up how I like it, it is used in the parent package
 [matapihi](https://github.com/sierra-alpha/matapihi) and
 [wakahiki](https://github.com/sierra-alpha/wakahiki) in order to achieve the
 desired setup.
-O
+
+## Quick Start
+
 This is the configuration file to bootstrap a system the way I like it.
 Commands expect to be in a `bash` shell, default is `sh` enter bash then,
 Copy and paste the following into a containers shell. the &&'s allow for commands requiring input.
@@ -48,3 +50,9 @@ xterm -bg grey19 -fg grey70  -fa 'Source Code Pro' -fs 10 -maximize  -bc -e bash
 && emacsclient -c -a emacs \
 || echo Failure, enter to exit && read ; bash"
 ```
+
+## Configure
+
+
+This is intended to be a starting point fo ryou to configure you're own
+environment the way you like it,
