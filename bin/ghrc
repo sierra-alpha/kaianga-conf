@@ -86,6 +86,8 @@ function github_repo_create() {
     fi
 
     echo "User: $user Repo Name: $reponame options: $private $description"
+    # TODO Don't read in the token like this, instead the API call can prompt
+    # for it, see ghak for an example
     echo "Private token for GitHub user"
     read -s dirty
     curltext="curl -u '${user}':'${dirty}' https://api.github.com/user/repos -d '{\"name\":\"${reponame}\"${private}${description} }'"
