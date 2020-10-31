@@ -38,10 +38,11 @@ calc_res () {
       awk '{ px_from_perc = $1 / 100 * $2; print px_from_perc }'
 }
 
-new_width_px=$(calc_res $width_pc $cur_width_px) 
+# Set up new resolutions or offsets using function above
+new_width_px=$(calc_res $width_pc $cur_width_px)
 new_height_px=$(calc_res $height_pc $cur_height_px)
 
-new_width_offset=$(calc_res $width_offset_pc $cur_width_px) 
+new_width_offset=$(calc_res $width_offset_pc $cur_width_px)
 new_height_offset=$(calc_res $height_offset_pc $cur_height_px)
 
 # If they have no name they're probably invisible xwindows so we ignore them
