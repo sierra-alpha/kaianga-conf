@@ -18,23 +18,10 @@ from the containerisation process of matapihi, so in theory you could run this
 on any debian based linux system (in time i'd like to ad support for CentOS and
 other flavours), physical, virtualised or containerised.
 
-This is the configuration file to bootstrap a system the way I like it.
-Commands expect to be in a `bash` shell, default is `sh` enter bash then,
-Copy and paste the following into a containers shell. the &&'s allow for commands requiring input.
 
-```bash
-sudo apt-get update && sudo apt-get install -y python3 python3-pip git \
-&& sudo pip3 install pipenv pyscaffold \
-&& git clone https://github.com/sierra-alpha/kainga-conf.git \
-&& mkdir wakahiki \
-&& cd wakahiki \
-&& virtualenv venv \
-&& . venv/bin/activate \
-&& git clone https://github.com/sierra-alpha/wakahiki.git \
-&& cd wakahiki/ \
-&& python setup.py develop \
-&& python src/wakahiki -c ~/kainga-conf/kainga.conf -l debug -o ~/.wakahiki.log -u shaun
-```
+This is the configuration file to bootstrap a system the way I like it.
+Commands expect to be in a `bash` shell, if your default is `sh` enter bash then,
+Copy and paste the following into a shell. the &&'s allow for commands requiring input.
 
 Or the following
 ```bash
