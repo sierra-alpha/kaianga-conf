@@ -118,6 +118,6 @@ function github_new_project() {
     fi
     pushlinktext="git push --set-upstream origin ${branch}"
     eval $pushlinktext
-}    
+}
 
 github_new_project "$@"
