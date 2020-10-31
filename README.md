@@ -32,7 +32,7 @@ sudo apt-get update && sudo apt-get install -y python3 python3-pip git \
 && wakahiki -c ~/kainga-conf/kainga.conf -l debug -o ~/.wakahiki.log -u shaun
 ```
 
-or in an .xinitrc
+or in an .xinitrc/.Xsession
 ```bash
 xterm -bg grey19 -fg grey70  -fa 'Source Code Pro' -fs 10 -maximize  -bc -e bash -c "sudo apt-get update \
 && sudo apt-get install -y python3 python3-pip git \
