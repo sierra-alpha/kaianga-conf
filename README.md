@@ -11,6 +11,9 @@ desired setup.
 
 ## Quick Start
 
+Use the script found at
+[kainga-bootsrap](https://github.com/sierra-alpha/kainga-conf/blob/master/kainga-bootstrap) 
+
 This is the configuration file to bootstrap a system the way I like it.
 Commands expect to be in a `bash` shell, default is `sh` enter bash then,
 Copy and paste the following into a containers shell. the &&'s allow for commands requiring input.
