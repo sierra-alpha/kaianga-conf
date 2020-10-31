@@ -114,7 +114,7 @@ function github_new_project() {
     echo -e "setting the remote now\n${remotetext}"
     eval $remotetext
     if ! branch=$(git symbolic-ref --short -q HEAD); then
-	branch="wip"
+	      branch="wip"
     fi
     pushlinktext="git push --set-upstream origin ${branch}"
     eval $pushlinktext
