@@ -16,7 +16,8 @@
 #     You should have received a copy of the GNU General Public License
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-# Append onto a file and merge if related entries. 
+# Append onto a file and merge if related entries. useful for merging
+# parts of code only once to a .rc file
 touch ~/.temp
 git merge-file --union "$1" ~/.temp "$2"
 rm ~/.temp
