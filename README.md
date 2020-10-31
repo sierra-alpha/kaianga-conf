@@ -47,6 +47,6 @@ xterm -bg grey19 -fg grey70  -fa 'Source Code Pro' -fs 10 -maximize  -bc -e bash
 
 ## Configure
 
-
-This is intended to be a starting point fo ryou to configure you're own
-environment the way you like it,
+This is intended to be a starting point fo you to configure you're own
+environment the way you like it, use the kainga.conf as a template to run any
+custom setups or scripts of your own.
