@@ -19,7 +19,7 @@
 
 # Requires xwit and xwininfo, eventually would like to split out to a script
 # That you could specify the percentage amounts in cmdline args
-
+# but for now we just make everything full size
 width_pc=100
 height_pc=100
 width_offset_pc=0
