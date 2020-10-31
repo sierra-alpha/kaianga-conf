@@ -12,7 +12,11 @@ desired setup.
 ## Quick Start
 
 Use the script found at
-[kainga-bootsrap](https://github.com/sierra-alpha/kainga-conf/blob/master/kainga-bootstrap) 
+[kainga-bootsrap](https://github.com/sierra-alpha/kainga-conf/blob/master/kainga-bootstrap)
+to setup the system in it's current configuration, it's intended to be decoupled
+from the containerisation process of matapihi, so in theory you could run this
+on any debian based linux system (in time i'd like to ad support for CentOS and
+other flavours in time)
 
 This is the configuration file to bootstrap a system the way I like it.
 Commands expect to be in a `bash` shell, default is `sh` enter bash then,
