@@ -107,12 +107,14 @@ function github_add_key() {
             https://api.github.com/user/keys \
             -d '{"title":"'"$title"'", "key":"'"$(cat "$pubkey")"'"}'
 
-        # unset HTTPS default and set SSH as default
-        git config --global --unset-all url."https://github.com/".insteadof
-        git config --global --unset-all url."https://".insteadof
-        git config --global url."git@github.com:".insteadof "https://github.com/"
-        git config --global url."git://".insteadOf "https://"
     done
+
+    # If we get here then it means that SSH is successful so
+    # unset HTTPS default and set SSH as default
+    git config --global --unset-all url."https://github.com/".insteadof
+    git config --global --unset-all url."https://".insteadof
+    git config --global url."git@github.com:".insteadof "https://github.com/"
+    git config --global url."git://".insteadOf "https://"
 }
 
 github_add_key "$@"
