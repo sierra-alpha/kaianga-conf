@@ -36,7 +36,7 @@ function help_me() {
 }
 
 function github_add_key() {
-    local user keyname pubkey OPTIND=1
+    local user skip keyname pubkey OPTIND=1
 
     while getopts u:n:f:sh option
     do
