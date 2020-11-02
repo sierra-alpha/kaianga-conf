@@ -35,6 +35,8 @@ function help_me() {
     echo "-u <username> The GitHub account username to upload the key too"
 }
 
+function default_to_https
+
 function github_add_key() {
     local user skip keyname pubkey OPTIND=1
 
@@ -105,7 +107,6 @@ function github_add_key() {
 
     done
 
-    if []
     # If we get here then it means that SSH is successful so
     # unset HTTPS default and set SSH as default
     git config --global --unset-all url."https://github.com/".insteadof
