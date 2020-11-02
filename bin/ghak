@@ -97,6 +97,7 @@ function github_add_key() {
         if [[ "$prompt" == "q" ]]
         then
 
+            unset user
             # Unset SSH Default and set HTTP default for pull
             git config --global --unset-all url."git@github.com:".insteadof
             git config --global --unset-all url."git://".insteadof
