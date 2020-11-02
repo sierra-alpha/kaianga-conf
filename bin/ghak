@@ -28,28 +28,44 @@ function welcome () {
 function help_me() {
     echo "Usage: ghak [options]"
     echo
-    echo "-u <username> The GitHub account username to upload the key too"
-    echo "-n <key name> The name for the key on GitHub, will default to user@hostname"
+    echo "-h Prints this help messsage and exits"
     echo "-f <public key file> The location of public key file to upload"
+    echo "-n <key name> The name for the key on GitHub, will default to user@hostname"
+    echo "-s Skips if the any key on the machine is authenticated with GH already"
+    echo "-u <username> The GitHub account username to upload the key too"
 }
 
 function github_add_key() {
     local user keyname pubkey OPTIND=1
 
-    while getopts u:n:f:h option
+    while getopts u:n:f:sh option
     do
         case "${option}"
         in
-            u) user=${OPTARG};;
-            n) keyname=${OPTARG};;
-            f) pubkey=${OPTARG};;
             h)
                 welcome
                 help_me
-                exit
+                exit;;
+            f) pubkey=${OPTARG};;
+            n) keyname=${OPTARG};;
+            s) skip=true;;
+            u) user=${OPTARG};;
         esac
     done
 
+    # If the skip flag is set then check if any SSH key is already
+    # authenticated for this users (local user not GH user)
+    # and if so exit
+    if [ ! -z "$skip" ]
+    then
+        # How to see if any of our keys are already authenticated
+        if ssh -T git@github.com 2>&1 | grep "successfully authenticated"
+        then
+            exit
+        fi
+    fi
+
+    # Prompt or set defaults for required
     if [ -z "$user" ]
     then
         echo "Enter the GitHub account username to upload the key to:"
