@@ -26,7 +26,8 @@ function welcome () {
 }
 
 function help_me() {
-    echo -e "Usage: ghak [options]-u <username> <key name> <public key file>\n"
+    echo "Usage: ghak [options]"
+    echo "[options]-u <username> <key name> <public key file>\n"
 }
 
 function github_add_key() {
@@ -45,10 +46,9 @@ function github_add_key() {
         esac
     done
 
-
-
-    arg_len=$#
-
+    if [ -z "$user" ];
+    then
+        echo 
     user=$1
     title=$2
     pubkey=$3
