@@ -101,7 +101,7 @@ function github_add_key() {
             git config --global --unset-all url."git://".insteadof
             git config --global url."https://github.com/".insteadof "git@github.com:"
             git config --global url."https://".insteadOf "git://"
-            break
+            exit
         fi
         curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/user/keys \
