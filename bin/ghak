@@ -26,11 +26,14 @@ function welcome () {
 }
 
 function help_me() {
-    echo -e "Usage: ghak <username> <key name> <public key file>\n"
+    echo -e "Usage: ghak [options]-u <username> <key name> <public key file>\n"
 }
 
 function github_add_key() {
-    local user dirty pubkey OPTIND=1
+    local user pubkey OPTIND=1
+
+
+
 
     arg_len=$#
 
