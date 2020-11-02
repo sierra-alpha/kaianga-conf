@@ -110,8 +110,8 @@ function github_add_key() {
         read prompt
         if [[ "$prompt" == "q" ]]
         then
-            unset user
-            break
+            default_to_https
+            exit
         fi
         curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/user/keys \
