@@ -78,10 +78,10 @@ function github_add_key() {
         read prompt
         if [[ "$prompt" == "q" ]]
         then
-            git config --global --unset-all url.git@github.com:.insteadof
-            git config --global --unset-all url.git://insteadof
-            git config --global url."https://github.com/".insteadof git@github.com:
-            git config --global url."https://".insteadOf git://
+            git config --global --unset-all url."git@github.com:".insteadof
+            git config --global --unset-all url."git://"insteadof
+            git config --global url."https://github.com/".insteadof "git@github.com:"
+            git config --global url."https://".insteadOf "git://"
             break
         fi
         curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
