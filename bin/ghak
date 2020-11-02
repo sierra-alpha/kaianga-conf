@@ -36,7 +36,7 @@ function help_me() {
 function github_add_key() {
     local user keyname pubkey OPTIND=1
 
-    while getotps u:n:f:h option
+    while getopts u:n:f:h option
     do
         case "${option}"
         in
