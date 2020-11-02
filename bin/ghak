@@ -27,6 +27,7 @@ function welcome () {
 
 function help_me() {
     echo "Usage: ghak [options]"
+    echo
     echo "[options]-u <username> <key name> <public key file>\n"
 }
 
