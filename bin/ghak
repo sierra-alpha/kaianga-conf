@@ -68,7 +68,8 @@ function github_add_key() {
     # Prompt or set defaults for required
     if [ -z "$user" ]
     then
-        echo "Enter the GitHub account username to upload the key to:"
+        echo "Enter the GitHub account username to upload the key to"
+        echo "(a blank entry will skip uploading a key)"
         read user
     fi
 
