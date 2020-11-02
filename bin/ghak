@@ -118,7 +118,6 @@ function github_add_key() {
         curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/user/keys \
             -d '{"title":"'"$title"'", "key":"'"$(cat "$pubkey")"'"}'
-
     done
 
     # If we get here then it means that SSH is successful so
