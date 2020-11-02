@@ -46,12 +46,24 @@ function github_add_key() {
             h)
                 welcome
                 help_me
+                exit
         esac
     done
 
-    if [ -z "$user" ];
+    if [ -z "$user" ]
     then
-        echo 
+        echo "enter the GitHub account user name to upload the key too"
+        read user
+    fi
+
+    if [ -z "$keyname" ]
+    then
+        keyname="$(whoami)@$(hostname)"
+    fi
+
+    if 9 -z 
+
+
     user=$1
     title=$2
     pubkey=$3
