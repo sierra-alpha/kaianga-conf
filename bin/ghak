@@ -96,14 +96,7 @@ function github_add_key() {
         read prompt
         if [[ "$prompt" == "q" ]]
         then
-
             unset user
-            # Unset SSH Default and set HTTP default for pull
-            git config --global --unset-all url."git@github.com:".insteadof
-            git config --global --unset-all url."git://".insteadof
-            git config --global url."https://github.com/".insteadof "git@github.com:"
-            git config --global url."https://".insteadOf "git://"
-            echo "Defaulting to HTTPS for github push and pulls"
             break
         fi
         curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
@@ -112,6 +105,7 @@ function github_add_key() {
 
     done
 
+    if []
     # If we get here then it means that SSH is successful so
     # unset HTTPS default and set SSH as default
     git config --global --unset-all url."https://github.com/".insteadof
@@ -119,6 +113,13 @@ function github_add_key() {
     git config --global url."git@github.com:".insteadof "https://github.com/"
     git config --global url."git://".insteadOf "https://"
     echo "Defaulting to SSH for github push and pulls"
+
+    # Unset SSH Default and set HTTP default for pull
+    git config --global --unset-all url."git@github.com:".insteadof
+    git config --global --unset-all url."git://".insteadof
+    git config --global url."https://github.com/".insteadof "git@github.com:"
+    git config --global url."https://".insteadOf "git://"
+    echo "Defaulting to HTTPS for github push and pulls"
 }
 
 github_add_key "$@"
