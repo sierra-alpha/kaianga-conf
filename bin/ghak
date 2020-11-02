@@ -104,8 +104,10 @@ function github_add_key() {
     # on failure. Note - the ssh connection always fails, so we need to redirect stderr
     while ! ssh -T git@github.com 2>&1 | grep " $user!"
     do
-        echo Trying to set up your ssh key to Git Hub,
-        echo requires a Personal access token.
+        echo Trying to set up your ssh key to Git Hub, requires a GitHub
+        echo "Personal Access Token with 'Write user public keys' access."
+        echo For more info go to:
+        echo https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
         echo Enter q to quit or any other key to continue.
         read prompt
         if [[ "$prompt" == "q" ]]
