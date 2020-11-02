@@ -80,6 +80,11 @@ function github_add_key() {
         echo "Enter the GitHub account username to upload the key to"
         echo "(a blank entry will skip uploading a key)"
         read user
+        if [ -z "$user" ]
+        then
+            default_to_https
+            exit
+        fi
     fi
 
     if [ -z "$keyname" ]
