@@ -62,6 +62,7 @@ function github_add_key() {
     fi
 
     if [ -z "$pubkey" ]
+    then
        echo "Enter the location of the public key to upload"
        read pubkey
     fi
