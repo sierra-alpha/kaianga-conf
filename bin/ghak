@@ -36,7 +36,12 @@ function help_me() {
 }
 
 function default_to_https() {
-    
+    # Unset SSH Default and set HTTP default for pull
+    git config --global --unset-all url."git@github.com:".insteadof
+    git config --global --unset-all url."git://".insteadof
+    git config --global url."https://github.com/".insteadof "git@github.com:"
+    git config --global url."https://".insteadOf "git://"
+    echo "Defaulting to HTTPS for github push and pulls"
 }
 
 function github_add_key() {
@@ -116,13 +121,6 @@ function github_add_key() {
     git config --global url."git@github.com:".insteadof "https://github.com/"
     git config --global url."git://".insteadOf "https://"
     echo "Defaulting to SSH for github push and pulls"
-
-    # Unset SSH Default and set HTTP default for pull
-    git config --global --unset-all url."git@github.com:".insteadof
-    git config --global --unset-all url."git://".insteadof
-    git config --global url."https://github.com/".insteadof "git@github.com:"
-    git config --global url."https://".insteadOf "git://"
-    echo "Defaulting to HTTPS for github push and pulls"
 }
 
 github_add_key "$@"
