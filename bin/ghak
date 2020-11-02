@@ -116,6 +116,7 @@ function github_add_key() {
     git config --global --unset-all url."https://".insteadof
     git config --global url."git@github.com:".insteadof "https://github.com/"
     git config --global url."git://".insteadOf "https://"
+    echo "Defaulting to SSH for github push and pulls"
 }
 
 github_add_key "$@"
