@@ -52,7 +52,7 @@ function github_add_key() {
 
     if [ -z "$user" ]
     then
-        echo "enter the GitHub account user name to upload the key too"
+        echo "Enter the GitHub account username to upload the key to:"
         read user
     fi
 
@@ -61,17 +61,9 @@ function github_add_key() {
         keyname="$(whoami)@$(hostname)"
     fi
 
-    if 9 -z 
-
-
-    user=$1
-    title=$2
-    pubkey=$3
-
-    if [[ $arg_len -lt 3 ]]; then
-	      echo "Not enough arguments passed"
-	      help_me
-	      return
+    if [ -z "$pubkey" ]
+       echo "Enter the location of the public key to upload"
+       read pubkey
     fi
 
     # https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/testing-your-ssh-connection
