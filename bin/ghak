@@ -88,6 +88,11 @@ function github_add_key() {
         curl -u "$user" -H "Accept: application/vnd.github.v3+json" \
             https://api.github.com/user/keys \
             -d '{"title":"'"$title"'", "key":"'"$(cat "$pubkey")"'"}'
+
+        git config --global --unset-all url."https://github.com/".insteadof
+        git config --global --unset-all url."https://".insteadof
+        git config --global url."git@github.com:".insteadof "https://github.com/"
+        git config --global url."git://".insteadOf "https://"
     done
 }
 
