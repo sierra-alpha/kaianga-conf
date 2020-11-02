@@ -30,9 +30,9 @@ function help_me() {
 }
 
 function github_add_key() {
-    local user pubkey OPTIND=1
+    local user keyname pubkey OPTIND=1
 
-
+    while get
 
 
     arg_len=$#
