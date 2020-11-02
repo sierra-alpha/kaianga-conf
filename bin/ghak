@@ -80,7 +80,7 @@ function github_add_key() {
         if [[ "$prompt" == "q" ]]
         then
             git config --global --unset-all url."git@github.com:".insteadof
-            git config --global --unset-all url."git://"insteadof
+            git config --global --unset-all url."git://".insteadof
             git config --global url."https://github.com/".insteadof "git@github.com:"
             git config --global url."https://".insteadOf "git://"
             break
