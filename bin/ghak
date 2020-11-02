@@ -28,7 +28,9 @@ function welcome () {
 function help_me() {
     echo "Usage: ghak [options]"
     echo
-    echo "[options]-u <username> <key name> <public key file>\n"
+    echo "-u <username> The GitHub user Account name to upload the key too"
+    echo "-n <key name> The name for the key on GitHub, will default to user@hostname"
+    echo "-f <public key file> The location of public key file to upload"
 }
 
 function github_add_key() {
