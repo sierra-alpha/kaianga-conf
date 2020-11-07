@@ -6,10 +6,10 @@
 import panflute as pf
 
 def action(elem, doc):
-    if isinstance(elem, pf.Link):
-        if (elem.url.endswith('.md'):
+    if isinstance(elem, pf.Link) and ".md" in elem.url:
+        if elem.url.endswith('.md'):
             elem.url = elem.url[:-3] + '.pdf'
-        
+        if '.md#' in elem.url
         return elem
 
 if __name__ == '__main__':
