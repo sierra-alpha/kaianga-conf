@@ -12,6 +12,7 @@ def action(elem, doc):
         if elem.url.endswith('.md'):
             elem.url = elem.url[:-3] + '.pdf'
         elem.url.replace(".md#", ".pdf#")
+        print(elem.url, file=sys.stderr) if "readme" in elem.url else None
         return elem
 
 if __name__ == '__main__':
