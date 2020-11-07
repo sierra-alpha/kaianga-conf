@@ -8,7 +8,7 @@ import sys
 
 def action(elem, doc):
     if isinstance(elem, pf.Link) and ".md" in elem.url:
-        print(elem.url, file=sys.stderr)
+        print(elem.url, file=sys.stderr, end = " --> ")
         if elem.url.endswith('.md'):
             elem.url = elem.url[:-3] + '.pdf'
         elem.url = elem.url.replace(".md#", ".pdf#")
