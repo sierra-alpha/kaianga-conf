@@ -4,6 +4,7 @@
 # From https://stackoverflow.com/questions/40993488/convert-markdown-links-to-html-with-pandoc
 
 import panflute as pf
+import sys
 
 def action(elem, doc):
     if isinstance(elem, pf.Link) and ".md" in elem.url:
